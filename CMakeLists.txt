@@ -30,7 +30,7 @@ endfunction()
 if (MASTER_PROJECT AND NOT CMAKE_BUILD_TYPE)
   join(doc "Choose the type of build, options are: None(CMAKE_CXX_FLAGS or "
            "CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.")
-  set(CMAKE_BUILD_TYPE Release CACHE STRING ${doc})
+  #set(CMAKE_BUILD_TYPE Release CACHE STRING ${doc})
 endif ()
 
 option(FMT_PEDANTIC "Enable extra warnings and expensive tests." OFF)
