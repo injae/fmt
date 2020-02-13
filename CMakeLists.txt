@@ -120,7 +120,7 @@ if (MSVC)
   set(PEDANTIC_COMPILE_FLAGS /W3)
   set(WERROR_FLAG /WX)
   if(CMAKE_BUILD_TYPE MATCHES "Debug")
-      set(CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG} \MDd CACHE STRING "Debug Mode bugfix" FORCE)
+      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} \MDd" CACHE STRING "Debug Mode bugfix" FORCE)
   endif()
 endif ()
 
