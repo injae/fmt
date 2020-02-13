@@ -122,6 +122,7 @@ if (MSVC)
   if(CMAKE_BUILD_TYPE MATCHES "Debug")
       set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} \MDd" CACHE STRING "Debug Mode bugfix" FORCE)
   endif()
+  message("Compiler Option: ${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_DEBUG}")
 endif ()
 
 #if (MASTER_PROJECT AND CMAKE_GENERATOR MATCHES "Visual Studio")
