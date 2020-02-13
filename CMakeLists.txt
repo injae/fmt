@@ -121,21 +121,21 @@ if (MSVC)
   set(WERROR_FLAG /WX)
 endif ()
 
-if (MASTER_PROJECT AND CMAKE_GENERATOR MATCHES "Visual Studio")
-  # If Microsoft SDK is installed create script run-msbuild.bat that
-  # calls SetEnv.cmd to set up build environment and runs msbuild.
-  # It is useful when building Visual Studio projects with the SDK
-  # toolchain rather than Visual Studio.
-  include(FindSetEnv)
-  if (WINSDK_SETENV)
-    set(MSBUILD_SETUP "call \"${WINSDK_SETENV}\"")
-  endif ()
-  # Set FrameworkPathOverride to get rid of MSB3644 warnings.
-  set(netfxpath "C:\\Program Files\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0")
-  file(WRITE run-msbuild.bat "
-    ${MSBUILD_SETUP}
-    ${CMAKE_MAKE_PROGRAM} -p:FrameworkPathOverride=\"${netfxpath}\" %*")
-endif ()
+#if (MASTER_PROJECT AND CMAKE_GENERATOR MATCHES "Visual Studio")
+#  # If Microsoft SDK is installed create script run-msbuild.bat that
+#  # calls SetEnv.cmd to set up build environment and runs msbuild.
+#  # It is useful when building Visual Studio projects with the SDK
+#  # toolchain rather than Visual Studio.
+#  include(FindSetEnv)
+#  if (WINSDK_SETENV)
+#    set(MSBUILD_SETUP "call \"${WINSDK_SETENV}\"")
+#  endif ()
+#  # Set FrameworkPathOverride to get rid of MSB3644 warnings.
+#  set(netfxpath "C:\\Program Files\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.0")
+#  file(WRITE run-msbuild.bat "
+#    ${MSBUILD_SETUP}
+#    ${CMAKE_MAKE_PROGRAM} -p:FrameworkPathOverride=\"${netfxpath}\" %*")
+#endif ()
 
 set(strtod_l_headers stdlib.h)
 if (APPLE)
